@@ -1,0 +1,18 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}{{ title|e }} | CRM ZAPEX{% endblock %}
+
+{% block content %}
+    <div class="panel-page-heading">
+        <div>
+            <p class="panel-eyebrow">{{ secao|upper|e }}</p>
+            <h1>{{ title|e }}</h1>
+            <p>Esta rotina ainda está em desenvolvimento.</p>
+        </div>
+    </div>
+
+    <section class="panel-account" aria-label="Estado da rotina">
+        <p>A página de {{ title|e }} já está conectada ao menu. O formulário desta rotina será adicionado aqui.</p>
+        <a class="panel-placeholder-back" href="{{ site_url('painel') }}">Voltar ao painel</a>
+    </section>
+{% endblock %}

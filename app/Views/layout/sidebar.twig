@@ -1,0 +1,105 @@
+<aside class="panel-sidebar" id="panel-sidebar" aria-label="Menu lateral">
+    <a class="panel-brand" href="{{ site_url('painel') }}" aria-label="CRM ZAPEX, início do painel" title="Início do painel">
+        <span class="panel-brand-symbol" aria-hidden="true">Z</span>
+        <span class="panel-brand-copy"><strong>CRM ZAPEX</strong><small>Área de trabalho</small></span>
+    </a>
+
+    <nav class="panel-navigation" aria-label="Navegação principal">
+        <span class="panel-nav-label">MENU PRINCIPAL</span>
+        <a class="panel-nav-link{% if pagina_ativa|default('') == 'painel' %} is-active{% endif %}" href="{{ site_url('painel') }}#visao-geral"{% if pagina_ativa|default('') == 'painel' %} aria-current="page"{% endif %} aria-label="Visão geral" title="Visão geral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            <span>Visão geral</span>
+        </a>
+        <a class="panel-nav-link" href="{{ site_url('painel') }}#minha-conta" aria-label="Minha conta" title="Minha conta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <span>Minha conta</span>
+        </a>
+
+        <div class="accordion panel-accordion" id="panel-menu-accordion">
+            <details class="accordion-item" id="cadastros-item" name="panel-sidebar-accordion"{% if secao_ativa|default('') == 'cadastros' %} open{% endif %}>
+                <summary class="accordion-header panel-nav-link panel-nav-accordion-toggle" id="cadastros-toggle" aria-controls="cadastros-submenu" title="Abrir cadastros">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h3m3 0h3"/></svg>
+                    <span>Cadastros</span>
+                    <small class="panel-nav-count" aria-label="28 opções">28</small>
+                    <svg class="accordion-icon panel-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-body panel-accordion-body" id="cadastros-submenu">
+                    <div class="panel-subnav">
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/produtos') }}">Produtos</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/indicador-produtos') }}">Indicador Produtos</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/unidades-medida') }}">Unidades de Medida</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/grupo-produtos') }}">Grupo de Produtos</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/indicador-mod-2') }}">Indicador (mod. 2)</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/complemento-produto') }}">Complemento do Produto</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/permissoes') }}">Permissões</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/locais-estoque') }}">Locais de Estoque</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/municipios') }}">Municípios</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/fornecedores') }}">Fornecedores</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/clientes') }}">Clientes</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/contatos') }}">Contatos</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/produtos-fornecedor') }}">Produtos X Fornecedor</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/grupo-fornecedor') }}">Grupo X Fornecedor</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/bancos') }}">Bancos</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/tipos-entrada-saida') }}">Tipos de Entrada e Saída</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/entrada-saida-inteligente') }}">Entrada/saída Inteligente</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/moedas') }}">Moedas</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/naturezas') }}">Naturezas</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/excecoes-fiscais') }}">Exceções Fiscais</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/condicao-pagamento') }}">Condição de Pagamento</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/impostos-variaveis') }}">Impostos Variáveis</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/messenger') }}">Messenger</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/lancamentos-padronizados') }}">Lançamentos Padronizados</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/ncm') }}">N.c.m.</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/banco-conhecimento') }}">Banco do Conhecimento</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/formulas') }}">Fórmulas</a>
+                        <a class="panel-subnav-item" href="{{ site_url('cadastros/motivo-retorno') }}">Motivo de Retorno</a>
+                    </div>
+                </div>
+            </details>
+
+            <details class="accordion-item" id="solicitacoes-item" name="panel-sidebar-accordion"{% if secao_ativa|default('') == 'solicitacoes' %} open{% endif %}>
+                <summary class="accordion-header panel-nav-link panel-nav-accordion-toggle" id="solicitacoes-toggle" aria-controls="solicitacoes-submenu" title="Abrir solicitações">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8 10h8M8 14h8M8 18h5"/></svg>
+                    <span>Solicitações</span>
+                    <small class="panel-nav-count" aria-label="6 opções">6</small>
+                    <svg class="accordion-icon panel-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-body panel-accordion-body" id="solicitacoes-submenu">
+                    <div class="panel-subnav">
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/compras') }}">Solicitação de Compras</a>
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/previstas') }}">Solicitações Previstas</a>
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/aglutinar') }}">Aglutinar Solicitações</a>
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/sugestao-compra') }}">Sugestão de Compra</a>
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/itens-importacao') }}">Itens Para Importação</a>
+                        <a class="panel-subnav-item" href="{{ site_url('solicitacoes/portal-marketplace') }}">Portal Marketplace</a>
+                    </div>
+                </div>
+            </details>
+
+            <details class="accordion-item" id="administracao-compras-item" name="panel-sidebar-accordion"{% if secao_ativa|default('') == 'administracao-compras' %} open{% endif %}>
+                <summary class="accordion-header panel-nav-link panel-nav-accordion-toggle" id="administracao-compras-toggle" aria-controls="administracao-compras-submenu" title="Abrir administração de compras">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 5V3h8v2M3 10h18M9 15l2 2 4-4"/></svg>
+                    <span>Administração de Compras</span>
+                    <small class="panel-nav-count" aria-label="10 opções">10</small>
+                    <svg class="accordion-icon panel-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-body panel-accordion-body" id="administracao-compras-submenu">
+                    <div class="panel-subnav">
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/tabela-precos') }}">Tabela de Preços</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/tolerancia-recebimento') }}">Tolerância Recebimento</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/entrega-terceiros') }}">Entrega Por Terceiros</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/tipos-compras') }}">Tipos de Compras</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/solicitantes') }}">Solicitantes</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/compradores') }}">Compradores</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/grupos-compras') }}">Grupos de Compras</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/aprovadores') }}">Aprovadores</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/perfis-aprovacao') }}">Perfis de Aprovação</a>
+                        <a class="panel-subnav-item" href="{{ site_url('administracao-compras/grupos-aprovacao') }}">Grupos de Aprovação</a>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </nav>
+
+    <div class="panel-sidebar-bottom"><span class="panel-status-dot" aria-hidden="true"></span>Sessão ativa</div>
+</aside>

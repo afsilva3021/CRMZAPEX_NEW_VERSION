@@ -1,0 +1,50 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}{{ title|default('Painel')|e }} | CRM ZAPEX{% endblock %}
+
+{% block content %}
+    <div class="panel-page-heading" id="visao-geral">
+        <div><p class="panel-eyebrow">PAINEL PRINCIPAL</p><h1>Visão geral</h1><p>Acompanhe as informações da sua equipe em um só lugar.</p></div>
+        <span class="panel-current-badge"><span class="panel-status-dot" aria-hidden="true"></span>Dados atuais</span>
+    </div>
+
+    <section class="panel-hero" aria-labelledby="welcome-title">
+        <div class="panel-hero-content">
+            <span class="panel-hero-kicker">Bem-vindo ao CRM</span>
+            <h2 id="welcome-title">Olá, {{ usuario_nome|default('Usuário')|e }}!</h2>
+            <p>Este é o seu espaço para acompanhar os usuários, os grupos e os dados da sua conta.</p>
+            <a class="panel-hero-link" href="#resumo-sistema">Ver resumo do sistema <span aria-hidden="true">→</span></a>
+        </div>
+        <img class="panel-hero-image" src="/assets/logo/crm.png" width="826" height="343" alt="CRM ZAPEX, sistema de vendas">
+    </section>
+
+    <section class="panel-section" id="resumo-sistema" aria-labelledby="summary-title">
+        <div class="panel-section-heading"><div><p class="panel-eyebrow">RESUMO DO SISTEMA</p><h2 id="summary-title">Indicadores</h2></div><p>Contagem atual dos registros</p></div>
+        <div class="panel-metrics">
+            <article class="panel-metric">
+                <span class="panel-metric-icon panel-metric-icon-blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2H3Zm14-15a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 5v1h-4"/></svg></span>
+                <span class="panel-metric-label">Total de usuários</span><strong class="panel-metric-value">{{ total_usuarios|default(0)|e }}</strong><span class="panel-metric-note">Cadastros no sistema</span>
+            </article>
+            <article class="panel-metric">
+                <span class="panel-metric-icon panel-metric-icon-green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="m17 13 2 2 3-3"/></svg></span>
+                <span class="panel-metric-label">Usuários ativos</span><strong class="panel-metric-value">{{ usuarios_ativos|default(0)|e }}</strong><span class="panel-metric-note">Com acesso habilitado</span>
+            </article>
+            <article class="panel-metric">
+                <span class="panel-metric-icon panel-metric-icon-violet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h3m3 0h3"/></svg></span>
+                <span class="panel-metric-label">Grupos cadastrados</span><strong class="panel-metric-value">{{ total_grupos|default(0)|e }}</strong><span class="panel-metric-note">Perfis de acesso</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel-account" id="minha-conta" aria-labelledby="account-title">
+        <div class="panel-account-heading">
+            <span class="panel-account-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+            <div><p class="panel-eyebrow">SEU PERFIL</p><h2 id="account-title">Minha conta</h2></div>
+        </div>
+        <dl class="panel-account-details">
+            <div><dt>Nome</dt><dd>{{ usuario_nome|default('Usuário')|e }}</dd></div>
+            <div><dt>Grupo de acesso</dt><dd>{{ grupo_nome|default('Grupo não identificado')|e }}</dd></div>
+            <div><dt>Sessão</dt><dd><span class="panel-account-active"><span class="panel-status-dot" aria-hidden="true"></span>Ativa</span></dd></div>
+        </dl>
+    </section>
+{% endblock %}
